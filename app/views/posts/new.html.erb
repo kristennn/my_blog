@@ -1,13 +1,11 @@
 <h2>New Post</h2>
 
-<%= simple_form_for @post do |f| %>
-  <div class="title">
-    <%= f.input :title %>
-  </div>
-  <div class="body">
-    <%= f.input :body %>
-  </div>
-  <div class="button">
-    <%= f.submit "Create Post" %>
-  </div>
+<%= form_for :post, url: posts_path do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+  <br>
+  <%= f.submit %>
 <% end %>
